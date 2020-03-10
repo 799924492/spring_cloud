@@ -1,0 +1,13 @@
+server:
+  port: 5000
+eureka:
+
+  instance:
+    instance-id: user-1
+  client:
+
+    service-url:
+      defaultZone: http://eureka3000.com:3000/eureka
+spring:
+  application:
+    name: client-user
