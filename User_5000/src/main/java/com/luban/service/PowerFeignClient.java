@@ -1,10 +1,10 @@
 package com.luban.service;
 
-import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
+
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-@FeignClient("service-power")
+@FeignClient(value = "service-power",fallbackFactory=PowerServiceFallBack.class)
 public interface PowerFeignClient {
     @RequestMapping("/getPower")
     Object getPower();

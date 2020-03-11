@@ -9,21 +9,29 @@
         <module name="Erueka_3000" />
         <module name="Erueka_3001" />
         <module name="Eureka_3002" />
+        <module name="Hystrix_DashBored_8000" />
         <module name="Power_6000" />
         <module name="Power_6001" />
         <module name="test_txt" />
         <module name="User_5000" />
+        <module name="zuul_7000" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="Erueka_3000" target="1.7" />
       <module name="Erueka_3001" target="1.7" />
       <module name="Eureka_3002" target="1.7" />
+      <module name="Hystrix_DashBored" target="1.7" />
+      <module name="Hystrix_DashBored_8000" target="1.7" />
+      <module name="HystrixDashBord_8000" target="1.7" />
+      <module name="HystrixDashbored_8000" target="1.7" />
       <module name="luban_Cloud" target="1.7" />
       <module name="Power_6000" target="1.7" />
       <module name="Power_6001" target="1.7" />
       <module name="test_txt" target="1.7" />
       <module name="User_5000" target="1.7" />
+      <module name="zuul7000" target="1.7" />
+      <module name="zuul_7000" target="1.7" />
     </bytecodeTargetLevel>
   </component>
 </project>

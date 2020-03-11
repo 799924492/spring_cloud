@@ -11,3 +11,6 @@ eureka:
 spring:
   application:
     name: client-user
+feign:
+  hystrix:
+    enabled: true

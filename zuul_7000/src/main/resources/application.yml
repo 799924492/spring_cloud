@@ -1,0 +1,26 @@
+server:
+  port: 7000
+eureka:
+
+  instance:
+    instance-id: zuul-1
+    prefer-ip-address: true
+  client:
+
+    service-url:
+      defaultZone: http://eureka3000.com:3000/eureka
+spring:
+  application:
+    name: server-zuul
+zuul:
+  routes:
+    mypower:
+     serviceId: service-power
+     path: /power/**
+     ignored-services: "*"
+  prefix: /api
+
+
+  MyZuulFilter:
+    pre:
+      disable: true

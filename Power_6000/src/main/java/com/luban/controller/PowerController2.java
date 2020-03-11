@@ -10,10 +10,11 @@ import java.util.Map;
 @RestController
 public class PowerController2 {
     @RequestMapping("/getPower")
-    public Map getPower2(){
+    public Map getPower2() {
 
         HashMap<Object, Object> hashMap = new HashMap<>();
-        hashMap.put("2222222","2222222");
+        hashMap.put("2222222", "2222222");
+
         return hashMap;
     }
 }

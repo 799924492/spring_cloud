@@ -1,6 +1,7 @@
 package com.luban.controller;
 
 import com.luban.service.PowerFeignClient;
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -20,9 +21,14 @@ public class UserController {
     }
 
     @RequestMapping("/getPower")
+    @HystrixCommand(fallbackMethod="fallbackMethod")
     public Object getPower() {
         Object forObject = restTemplate.getForObject(url + "/getPower", Object.class);
         return forObject;
+    }
+    public Object fallbackMethod() {
+
+        return "系统繁忙";
     }
 
     @RequestMapping("/getFeignPower")

@@ -8,3 +8,62 @@ Ribbon 是提供客户端负载均衡的组件的
  1.>我们从Erurka 中获取服务
  2.>通过服务调用
  //默认的是轮询
+ 我们可以通过 RestTemplate  来进行 调用
+ rabbule的核心组件 Irule----->我们可以选择不同的负载均衡算法
+ --->Feign 简化了RestTemplate  发送请求 
+ Feign 可以和Eureka 和Rabble支持负载均衡
+ openfeign
+  将接口作为feign 的客户端
+  Feign发送请求的  封装Http的
+  Rabble是负载均衡的
+  //Hystrix
+  Hystrix是断路器，Hystrix保证在分布式系统中一个依赖出现问题 ，其他依赖不出现问题
+   比如说超时 异常
+   大型项目出现一些问题 比如说超时 异常
+   超时 异常的时候需要降级    降级在服务端做
+   @HystrixCommond  比如这个系统超时或者说是 出错吧
+    容错框架
+	@Hystrix可以监听你的请求有没有超时 以及报错了 直接走Fallback
+	
+	
+	熔断  当一个微服务调用多次出现问题时[默认10秒 内20次]，Hystrix就会采取熔断机制，
+	此时的请求就会直接访问Fallback方法,而不在访问改方法， 但是会在5秒之后再访问该方法 
+Feign整合Hystrix
+//1.开启feign.hystrix.true	
+2/降级方法fallbackfactory服务降级--->FallbackFactory优先级高于FallbackMethod
+  implements FallbackFactory<PowerFeignClient>
+	//Zuul--->网关
+  对请求的路由和过滤
+  路由主要是吧[外部请求转发到具体的微服务上],相当于外部访问微服务的统一入口，过滤就是说对请求的过程进行干预
+   比如说身份验证
+   Zuul会注册到Erueka中
+   @EnableZuulProxy
+   http://localhost:7000/service-power/getPower    我们可以通过服务名直接调取服务
+   我们不能让我们的服务名暴露在外面
+   所以啊 
+     ignored-services: "*"  //我们此时不能吧服务名字暴露出来
+	  prefix: /api  加个apI
+	  
+	  
+	  过滤器是Zuul的核心组件
+	  
+	  请求----------------pre-------->Zuul ------Routing---------->微服务
+	  Zuul定义了4种过滤器>
+	  1>pre 在请求被路由之前调用,可以通过这种过滤器实现身份认真  在集群中添加日志的打印信息等等
+	  2>Routing---->在被路由之后调用 ，将请求路由到微服务
+	  3>POST---> 在微服务以后执行 主要是为响应添加HttpHeader  处理信息
+	  4>Errors--->
+	  
+	  我们该如何实现一个过滤器
+	  ZuulFilter
+	  //------------------------>FilterConstants  
+	  //  重新学Web
+	  禁止Zuul的过滤器zuul.LogFilter.pre.disable=true
+	  
+	  Zuul的容错与回退
+	  Zuul默认整合Hystrix和ribbon  提供降级回退
+///------------------------》close  当降级信息相应完调用的方法
+//55/HystrixDashbord  对微服务进行监控
+1.Hystrix提供了对服务的监控 但是需要结合<spring-boot-starter-actuator 一起用,可以看到调用服务的信息
+/actuator/hystream.stream
+2.但是是Json格式的数据

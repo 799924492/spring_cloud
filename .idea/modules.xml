@@ -5,11 +5,13 @@
       <module fileurl="file://$PROJECT_DIR$/Erueka_3000/Erueka_3000.iml" filepath="$PROJECT_DIR$/Erueka_3000/Erueka_3000.iml" />
       <module fileurl="file://$PROJECT_DIR$/Erueka_3001/Erueka_3001.iml" filepath="$PROJECT_DIR$/Erueka_3001/Erueka_3001.iml" />
       <module fileurl="file://$PROJECT_DIR$/Eureka_3002/Eureka_3002.iml" filepath="$PROJECT_DIR$/Eureka_3002/Eureka_3002.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Hystrix_DashBored_8000/Hystrix_DashBored_8000.iml" filepath="$PROJECT_DIR$/Hystrix_DashBored_8000/Hystrix_DashBored_8000.iml" />
       <module fileurl="file://$PROJECT_DIR$/Power_6000/Power_6000.iml" filepath="$PROJECT_DIR$/Power_6000/Power_6000.iml" />
       <module fileurl="file://$PROJECT_DIR$/Power_6001/Power_6001.iml" filepath="$PROJECT_DIR$/Power_6001/Power_6001.iml" />
       <module fileurl="file://$PROJECT_DIR$/User_5000/User_5000.iml" filepath="$PROJECT_DIR$/User_5000/User_5000.iml" />
       <module fileurl="file://$PROJECT_DIR$/luban_Cloud.iml" filepath="$PROJECT_DIR$/luban_Cloud.iml" />
       <module fileurl="file://$PROJECT_DIR$/test_txt/test_txt.iml" filepath="$PROJECT_DIR$/test_txt/test_txt.iml" />
+      <module fileurl="file://$PROJECT_DIR$/zuul_7000/zuul_7000.iml" filepath="$PROJECT_DIR$/zuul_7000/zuul_7000.iml" />
     </modules>
   </component>
 </project>

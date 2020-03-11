@@ -15,6 +15,6 @@ public class Power_6000
 
     public static void main(String[] args) {
         SpringApplication.run(Power_6000.class);
-        System.out.println(2);
+
     }
 }

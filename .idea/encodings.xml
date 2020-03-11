@@ -5,9 +5,13 @@
     <file url="file://$PROJECT_DIR$/Erueka_3000" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Erueka_3001" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Eureka_3002" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/HystrixDashbored_8000" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Hystrix_DashBored" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Hystrix_DashBored_8000" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Power_6000" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Power_6001" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/User_5000" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/test_txt" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/zuul_7000" charset="UTF-8" />
   </component>
 </project>
