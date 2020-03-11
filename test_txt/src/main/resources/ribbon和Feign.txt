@@ -67,3 +67,39 @@ Feign整合Hystrix
 1.Hystrix提供了对服务的监控 但是需要结合<spring-boot-starter-actuator 一起用,可以看到调用服务的信息
 /actuator/hystream.stream
 2.但是是Json格式的数据
+所以啊我们此时要用Hystrix.DashBored
+我们用/actuator/hystrix.stream就可以监控到微服务
+
+http://localhost:5000/actuator/hystrix.stream
+此时我们可以用localhost:8000/hystrix打开网址-->再接着用http://localhost:5000/actuator/hystrix.stream
+就可以看到图形化界面了
+//Spring-Cloud-Config---->config
+Spring-Cloud-Config 这个项目出来是为了简化我们配置 类似于maven一样
+ 让我们直接能从云中读取到配置文件
+ https://github.com/513667225/my-spring-cloud-config
+ //  这样我们就可以获取得到云端的配置文件了
+  但是现在的问题是我们如何从客户端得到配置文件呢，用yml和properties一样
+  1.> 现在我们把这个配置文件加到Erueka目录下
+  //-------> 配置文件的高可用  将config注入到Erueka 上
+  ////////------------------>
+  spring -cloud -sleuth
+  spring- cloud sleuth 是分布式追踪的一个模块
+  在微服务架构中,一个前端请求在后端系统中会经过很多不同的微服务结点 链路中任何一初出错都会影响这个请求的最后失败
+  spring-cloud-sleuth 提供了一套完整服务追踪方案
+  //------->
+  sleuth 对于分布式链路的追踪仅仅是一些数据的记录 //-->
+   我们吧这些数据交给Ziplin<->Service来统一处理【可视图的】
+//sleuth整合zipkin
+1>加入sleuth 包
+2>加入整合Zipkin 的包
+sleuth只是提供数据 整合Zipkin  然后将数据传送至------->zipkin客户端 进行视图化
+trace  id 不变    span的  id  会随之变化
+//-------->Spring-cloud学习
+1>Spring Cloud吧各个组件配合起来 形成一整套的微服务架构
+2>Erueka 负责服务的注册于发现
+2>rabble和 feign 负责负载均衡以及服务的调用
+3>hystrix 提供了监控了微服务之间的调用状态 提供了降级
+4.>hystrixbored 将hystrix熔断情况以及监控信息提供图形化界面【请求成功还是失败 需要把路径复制过来】
+5>spring cloud config 提供了统一的配置服务
+6.>所有的外来请求都由Zuul负责统一路由和转发 以及过滤
+7.>slueth配合zipkin提供了数据的追踪 并把数据以图形化的界面供我们日后分析

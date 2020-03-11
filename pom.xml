@@ -18,6 +18,9 @@
         <module>test_txt</module>
         <module>zuul_7000</module>
         <module>Hystrix_DashBored_8000</module>
+        <module>config-service1</module>
+        <module>config_client_10000</module>
+        <module>zipkin_service</module>
 
 
     </modules>
@@ -35,6 +38,7 @@
     </properties>
 
     <dependencies>
+
         <dependency>
             <groupId>com.google.code.gson</groupId>
             <artifactId>gson</artifactId>

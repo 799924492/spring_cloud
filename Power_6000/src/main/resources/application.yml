@@ -11,3 +11,8 @@ eureka:
 spring:
   application:
     name: service-power
+  zipkin:
+    base-url: http://localhost:12000
+  sleuth:
+    sampler:
+      probability: 1.0
