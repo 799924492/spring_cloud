@@ -9,6 +9,7 @@ import org.springframework.web.client.RestTemplate;
 
 @RestController
 public class UserController {
+    // 服务名字
     static String url = "http://service-power";
     @Autowired
     RestTemplate restTemplate;
